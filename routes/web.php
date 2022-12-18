@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\Auth\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,26 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+
+
+
 Route::get('/', function () {
-    return view('admin-dashboard.views.index');
-})->name('admin-dashboard');
-
-
-Route::group([
-    'prefix' => 'admin',
-    'as' => 'admin-dashboard.'
-], function(){
-
-
-
-Route::get('/forms', function(){ return view('admin-dashboard.views.demo.forms'); })->name('forms');
-Route::get('/cards', function(){ return view('admin-dashboard.views.demo.cards'); })->name('cards');
-Route::get('/charts', function(){ return view('admin-dashboard.views.demo.charts'); })->name('charts');
-Route::get('/buttons', function(){ return view('admin-dashboard.views.demo.buttons'); })->name('buttons');
-Route::get('/modals', function(){ return view('admin-dashboard.views.demo.modals'); })->name('modals');
-Route::get('/tables', function(){ return view('admin-dashboard.views.demo.tables'); })->name('tables');
-Route::get('/login', function(){ return view('admin-dashboard.views.demo.login'); })->name('login');
-Route::get('/register', function(){ return view('admin-dashboard.views.demo.create-account'); })->name('register');
-Route::get('/404', function(){ return view('admin-dashboard.views.demo.404'); })->name('404');
-Route::get('/forgot-password', function(){ return view('admin-dashboard.views.demo.forgot-password'); })->name('forgot-password');
+    return view('welcome');
 });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+
+require __DIR__.'/auth.php';
+require __DIR__.'/admin.php';
+require __DIR__.'/designer.php';
