@@ -1,4 +1,4 @@
-@extends('admin-dashboard.layouts.base')
+@extends('designer-dashboard.layouts.base')
 @section('content')
     <main class="h-full overflow-y-auto">
         <div class="container px-6 mx-auto grid">

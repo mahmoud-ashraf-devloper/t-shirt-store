@@ -2,8 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base {
     input {
         @apply border-purple-600;
     }
+} */
+
+*{
+    /* border: 1px solid red; */
 }
+
+
+@layer utilities {
+    .bg-navy {
+        background-color: #0F3460;
+    }
+    .bg-light-red {
+        background-color: #E94560;
+    }
+    .text-navy {
+        color: #0F3460;
+    }
+    .text-light-red {
+        color: #E94560;
+    }
+}
+
+/* custom css */
+.owl-theme .owl-nav [class*=owl-] {
+    top: 44%;
+}
+/* tab */
+.tab.active {
+    color: #0F3460;
+    border-bottom: 2px solid #0F3460;
+}
+.tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }

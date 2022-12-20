@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\User\Auth\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/shop', [HomeController::class, 'shop']);
+Route::get('/product', [HomeController::class, 'product']);
+Route::get('/cart', [HomeController::class, 'cart']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

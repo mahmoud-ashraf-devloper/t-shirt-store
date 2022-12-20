@@ -40,6 +40,10 @@
                 </a>
             </li>
             <li class="relative px-6 py-3">
+                @if (request()->is('designer/dashboard/demo/cards'))
+                    <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                        aria-hidden="true"></span>
+                @endif
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                     href="{{ route('designer.dashboard.cards') }}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -52,6 +56,10 @@
                 </a>
             </li>
             <li class="relative px-6 py-3">
+                @if (request()->is('designer/dashboard/demo/charts'))
+                    <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                        aria-hidden="true"></span>
+                @endif
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                     href="{{ route('designer.dashboard.charts') }}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -63,6 +71,10 @@
                 </a>
             </li>
             <li class="relative px-6 py-3">
+                @if (request()->is('designer/dashboard/demo/buttons'))
+                    <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                        aria-hidden="true"></span>
+                @endif
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                     href="{{ route('designer.dashboard.buttons') }}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -75,6 +87,10 @@
                 </a>
             </li>
             <li class="relative px-6 py-3">
+                @if (request()->is('designer/dashboard/demo/modals'))
+                    <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                        aria-hidden="true"></span>
+                @endif
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                     href="{{ route('designer.dashboard.modals') }}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -87,6 +103,10 @@
                 </a>
             </li>
             <li class="relative px-6 py-3">
+                @if (request()->is('designer/dashboard/demo/tables'))
+                    <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                        aria-hidden="true"></span>
+                @endif
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                     href="{{ route('designer.dashboard.tables') }}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
